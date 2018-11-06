@@ -1,0 +1,36 @@
+{
+  "name": "stone",
+  "version": "1.0.0",
+  "description": "a server framework for grounded web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "chalk": "^2.4.1",
+    "clear": "^0.1.0",
+    "dotenv": "^6.1.0",
+    "emoji": "^0.3.2",
+    "figlet": "^1.2.1",
+    "glue": "^5.0.0",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.1.0",
+    "hapi": "^17.7.0",
+    "inert": "^5.1.1",
+    "lout": "^11.1.0",
+    "moment": "^2.22.2",
+    "node-emoji": "^1.8.1",
+    "vision": "^5.4.2"
+  }
+}
