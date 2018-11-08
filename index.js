@@ -25,97 +25,15 @@ const config = {
 };
 
 // IMPORTS
-// SERVER
-import Glue from 'glue';
-import Inert from 'inert';
-import Vision from 'vision';
-import Lout from 'lout';
 import Moment from 'moment';
+
+// LIB
+import createManifest from './lib/createManifest';
 
 // UTILS
 import * as log from './utils/log';
 
-const stone = function(config) {
-
-  // we will assume a .env file
-  const port = process.env.PORT || 3000;
-
-  // core modules
-  const modules = [
-    Inert,
-    Vision
-  ];
-
-  // authentication strategies
-  const auths = [];
-
-  // asset routes serve static assets and html files
-  const assets = [];
-
-  // api routes
-  const api = [];
-
-  // logging configuration
-  const consoleReporter = [
-    {
-      module: 'good-squeeze',
-      name: 'Squeeze',
-      args: [{
-        error: '*',
-        log: '*',
-        request: '*',
-        response:'*'
-      }]
-    },
-    {
-      module: 'good-console',
-      args: [{
-        color: {
-          $filter: 'env',
-          production: false,
-          $default: true
-        }
-      }]
-    },
-    'stdout'
-  ];
-
-  const reporters = {
-    consoleReporter
-  };
-
-  const logs = [
-    {
-      plugin: 'good',
-      options: {
-        reporters
-      }
-    }
-  ];
-
-  // MANIFEST
-  const base = [];
-  const plugins = base.concat(
-    modules,
-    auths,
-    assets,
-    logs,
-    api
-  );
-
-  const manifest = {
-    server: {
-      port
-    },
-    register: {
-      plugins
-    }
-  };
-
-  return {
-    ...manifest
-  };
-};
+const stone = createManifest();
 
 const splash = async function(stone, config) {
   const options = {
