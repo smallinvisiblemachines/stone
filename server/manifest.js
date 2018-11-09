@@ -1,29 +1,37 @@
 // IMPORTS
-import Glue from 'glue';
 import Inert from 'inert';
 import Vision from 'vision';
-import Lout from 'lout';
 
-export default function createManifest(config) {
-
+export default function manifest(config) {
+  // PORT
   // we will assume a .env file
-  const port = process.env.PORT || 3000;
+  let port = null;
+  if (config.port) {
+    port = process.env.PORT || 3000;
+  } else {
+    port = config.port;
+  }
 
+  // CORE
   // core modules
   const modules = [
     Inert,
     Vision
   ];
 
-  // authentication strategies
-  const auths = [];
+  // AUTH
+  // add all our authentication strategies
+  let auths = [];
 
+  // STATIC ASSETS
   // asset routes serve static assets and html files
   const assets = [];
 
+  // API 
   // api routes
   const api = [];
 
+  // LOGGING
   // logging configuration
   const consoleReporter = [
     {
@@ -63,6 +71,7 @@ export default function createManifest(config) {
   ];
 
   // MANIFEST
+  // assemble our previous variables into a server manifest
   const base = [];
   const plugins = base.concat(
     modules,
@@ -72,7 +81,8 @@ export default function createManifest(config) {
     api
   );
 
-  const manifest = {
+  // return our full manifest
+  return {
     server: {
       port
     },
@@ -81,5 +91,8 @@ export default function createManifest(config) {
     }
   };
 
-  return manifest;
 };
+
+
+
+
