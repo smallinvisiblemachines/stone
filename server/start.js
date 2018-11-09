@@ -1,8 +1,11 @@
 // IMPORTS
 import Glue from 'glue';
 
+// CONFIG
+import config from '../config.json';
+
 // UTILS
-import log from '../utils/log';
+import * as log from '../utils/log';
 
 const start = async function(manifest, options) {
   try {

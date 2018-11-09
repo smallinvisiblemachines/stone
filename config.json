@@ -1,11 +1,11 @@
 {
-  "title": "Airstone",
-  "description": "a grounded CMS for web apps",
-  "emoji": "gem",
+  "title": "Stone",
+  "description": "a grounded API for seamless web apps",
+  "emoji": "moyai",
   "pages": {
     "/about": {
       "title": "About",
-      "subtitle": "All about Airstone."
+      "subtitle": "All about Stone."
     }
   }
 }

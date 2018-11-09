@@ -14,5 +14,5 @@ const dir = {
 
 start(
   manifest(config, dir),
-  config
+  dir
 );
