@@ -5,11 +5,9 @@ import Vision from 'vision';
 export default function manifest(config) {
   // PORT
   // we will assume a .env file
-  let port = null;
+  let port = process.env.PORT || 3000;
   if (config.port) {
-    port = process.env.PORT || 3000;
-  } else {
-    port = config.port;
+    port = config.port;    
   }
 
   // CORE
@@ -25,11 +23,15 @@ export default function manifest(config) {
 
   // STATIC ASSETS
   // asset routes serve static assets and html files
-  const assets = [];
+  const assets = [
+    './server/api/assets.js'
+  ];
 
   // API 
   // api routes
-  const api = [];
+  const api = [
+    './server/api/pages.js'
+  ];
 
   // LOGGING
   // logging configuration

@@ -4,6 +4,7 @@
   "description": "a server framework for grounded web applications",
   "main": "index.js",
   "scripts": {
+    "watch": "webpack --progress --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "babel-node index.js"
   },
@@ -26,11 +27,20 @@
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-squeeze": "^5.1.0",
+    "grommet": "^2.0.0-rc",
+    "grommet-icons": "^3.2.0",
     "hapi": "^17.7.0",
+    "html-webpack-plugin": "^3.2.0",
     "inert": "^5.1.1",
     "lout": "^11.1.0",
     "moment": "^2.22.2",
     "node-emoji": "^1.8.1",
-    "vision": "^5.4.2"
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1",
+    "vision": "^5.4.2",
+    "webpack": "^4.25.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
   }
 }
