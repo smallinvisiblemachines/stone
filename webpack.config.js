@@ -17,8 +17,7 @@ module.exports = {
   target: 'web',
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Airstone',
-      inject: true,
+      title: 'Stone',
       template: './webpack.template.html'
     })
   ],

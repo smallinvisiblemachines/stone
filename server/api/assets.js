@@ -5,6 +5,7 @@ exports.plugin = {
   },
   register: function(server, options, next) {
     
+    // serve index
     server.route({
       method: 'GET',
       path: '/',
@@ -18,7 +19,21 @@ exports.plugin = {
       }
     });
 
+    // serve our bundle
+    server.route({
+      method: 'GET',
+      path: '/bundle.js',
+      options: {
+        plugins: {
+          lout: false
+        },
+        handler: function(request, h) {
+          return h.file('./build/bundle.js');
+        }
+      }
+    });
 
+    // all other assets
     server.route({
       method: 'GET',
       path: '/assets/{param*}',
