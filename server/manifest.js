@@ -72,6 +72,19 @@ export default function manifest(config) {
     }
   ];
 
+  // DB
+  // configuration for our database(s)
+  // const db = [{
+  //   plugin: 'hapi-mongoose',
+  //   options: {
+  //     url: 'mongodb://127.0.0.1:27017',
+  //     promises: 'native',
+  //     mongooseOptions: {
+  //       dbName: 'test',
+  //     },
+  //   },
+  // }];
+
   // MANIFEST
   // assemble our previous variables into a server manifest
   const base = [];
@@ -80,6 +93,7 @@ export default function manifest(config) {
     auths,
     assets,
     logs,
+    db,
     api
   );
 

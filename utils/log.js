@@ -44,4 +44,5 @@ export function welcome( server, config ) {
     chalk.gray(`on`),
     chalk.magenta(`${moment().format('h:mm:ss A - ddd Do of MMM')}`)
   );
+
 };
